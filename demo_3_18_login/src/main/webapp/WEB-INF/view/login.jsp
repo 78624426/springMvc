@@ -11,10 +11,17 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="${pageContext.request.contextPath}/login" method="post">
-        <input name="name" placeholder="用户名"><br>
-        <input name="pass" type="password" placeholder="密码"><br>
+    <form action="${pageContext.request.contextPath}/p1/submit" method="post">
+        <input name="name" placeholder="用户名" value="${name}"><br>
+        <input name="pass" type="password" placeholder="密码" value="${user.pass}"><br>
+        boolean:<input name="ok"><br>
+        年龄：<input name="a"><br>
+        省:<input name="addr.province"><br>
+        市:<input name="addr.city"><br>
+        游戏<input type="checkbox" name="hobbies" value="游戏">
+        旅游<input type="checkbox" name="hobbies" value="旅游">
         <input type="submit">
     </form>
+<h1>msg:${m1}</h1>
 </body>
 </html>

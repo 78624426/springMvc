@@ -19,6 +19,6 @@
     </bean>
 
     <mvc:view-controller path="/showLogin" view-name="login"/>
-
+    <mvc:view-controller path="/p1/showLogin" view-name="login"/>
 
 </beans>
