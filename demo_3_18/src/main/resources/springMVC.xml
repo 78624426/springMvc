@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+">
+   <mvc:annotation-driven/>
+    <!--第四步：配置handler,handlermapping-->
+    <context:component-scan base-package="controller"/>
+
+    <!--第五步：视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="suffix" value=".jsp"></property>
+        <property name="prefix" value="/WEB-INF/view/"/>
+    </bean>
+
+    <!--<mvc:view-controller path="/showH" view-name="hello"/>
+    下面方式，在访问页面时，就localhost/hello-->
+    <!--<mvc:view-controller path="*"/>-->
+    <!--<mvc:default-servlet-handler/>-->
+
+    <!--
+    两个*：表示匹配images/后的任意一个资源，不管路径有多深,/images/a/b/c/teacher.gif
+    一个*:匹配/images/a.gif
+    比如：/images/a/b/1.jpg到/web-inf/images/a/b/下找1.jpg
+    -->
+    <mvc:resources mapping="/images/**" location="/WEB-INF/images/"/>
+</beans>
