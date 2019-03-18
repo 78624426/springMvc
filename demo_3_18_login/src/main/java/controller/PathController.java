@@ -85,15 +85,14 @@ public class PathController {
     }
 
     @RequestMapping("/submit")
-    public String sub1(String name, @RequestParam(name="a",required = true,defaultValue = "23") Integer age, Boolean ok, HttpSession session, Model m, User u,String[]hobbies){
+    public String sub1(String name,HttpServletRequest req, @RequestParam(name="a",required = true,defaultValue = "23") Integer age, Boolean ok, HttpSession session, Model m, User u,String[]hobbies){
         m.addAttribute("m1","hello");//将来页面获取数据${m1}
         System.out.println("name="+name);
         System.out.println("age="+age);
         System.out.println("ok="+ok);
         System.out.println("user="+u);
         m.addAttribute("name","abc");
+        m.addAttribute("user",u);
         return "redirect:showLogin";
     }
-
-
 }

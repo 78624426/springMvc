@@ -12,6 +12,7 @@
 </head>
 <body>
     <form action="${pageContext.request.contextPath}/p1/submit" method="post">
+
         <input name="name" placeholder="用户名" value="${name}"><br>
         <input name="pass" type="password" placeholder="密码" value="${user.pass}"><br>
         boolean:<input name="ok"><br>

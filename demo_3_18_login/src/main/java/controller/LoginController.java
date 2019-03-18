@@ -1,5 +1,6 @@
 package controller;
 
+import org.apache.ibatis.jdbc.Null;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,7 +17,7 @@ public class LoginController {
     }
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     public String login1(String name,String pass){
-
-        return "login";
+        throw new NullPointerException("abc");
+        //return "login";
     }
 }
