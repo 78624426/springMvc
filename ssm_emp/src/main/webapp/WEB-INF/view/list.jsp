@@ -20,7 +20,7 @@
             <th>Salary</th>
             <th>Gender</th>
         </tr>
-        <c:forEach items="${emps}" var="e"
+        <c:forEach items="${emps}" var="e"></c:forEach>
 
 
     </table>
