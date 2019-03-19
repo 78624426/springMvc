@@ -21,4 +21,13 @@
     <mvc:view-controller path="/showLogin" view-name="login"/>
     <mvc:view-controller path="/p1/showLogin" view-name="login"/>
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/log/*"/><!--拦截谁-->
+            <mvc:exclude-mapping path="/log/add"/><!--不拦谁-->
+            <mvc:exclude-mapping path="aa"/>
+            <bean class="interceptor.LogInter"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 </beans>
